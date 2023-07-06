@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+@endpush
+
 @section('content')
 
 <h1>
@@ -10,3 +14,9 @@
 {{$user-> email}}
 
 @endsection
+
+@push('scripts')
+    <script src={{ asset('js/user.js') }}></script>
+@endpush
+
+
