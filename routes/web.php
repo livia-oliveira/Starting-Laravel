@@ -1,8 +1,9 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\BusinessController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +15,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-
+Route::get('businesses', [BusinessController::class, 'index']);
 Route::get('user/{user}', [UserController::class, 'showUser']);
 Route::get('users', [UserController::class, 'index']);
 
