@@ -9,16 +9,12 @@ use App\Models\Business;
 class BusinessController extends Controller
 {
     public function index(){
-    //   $businesses = Business::all();
-    //   dd($businesses);
+        $business = Business::create([
+            'name' => 'Ammit',
+            'email' => 'ammmit@gmail.com',
+            'address' => 'Rua das flores, n° 10',
 
-    // $business = Business::find(1);
-    // dd($business);
-
-    $businessWhere = Business::where('name', 'Heathcote and Sons')->get();
-
-    $businessWhereFirst = Business::where('name', 'Heathcote and Sons')->first();
-
-    dd($businessWhere, $businessWhereFirst);
+        ]);
+        dd($business);
     }
 }
