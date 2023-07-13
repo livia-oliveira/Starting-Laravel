@@ -10,15 +10,10 @@ class BusinessController extends Controller
 {
     public function index(){
 
-        $input = [
-            'name' => 'Ammit2',
-            'email' => 'ammit2@gmail.com',
-            'address' => 'Rua das amoras doces, n°4'
-        ];
+        $business = Business::find(2);
+        //  $business->delete();
+        dd($business->toSql());
 
-        $business = Business::find(5);
-        $business->fill($input);
-        $business->save();
 
 
 
@@ -33,6 +28,6 @@ class BusinessController extends Controller
         // $business->email = 'morango@gmail.com';
         // $business->address = 'Rua amoras doces, n°10';
         // $business->save();
-        dd($business);
+
     }
 }
