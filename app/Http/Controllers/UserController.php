@@ -17,11 +17,10 @@ class UserController extends Controller{
 
 
     public function showUser(User $user){
-        // $user->posts()->create([
-        //     'title' => 'Meu primeiro post',
-        //     'content' => 'Isso é um post',
-        // ]);
-        $user->posts()->delete();
+         $user->posts()->create([
+            'title' => 'Moda',
+          'content' => 'Isso é um post sobre moda',
+        ]);
         dd($user->posts);
         return view('user',[
             'name' => 'Moranguinho',
