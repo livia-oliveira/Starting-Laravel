@@ -17,11 +17,13 @@ class UserController extends Controller{
 
 
     public function showUser(User $user){
-         $user->posts()->create([
-            'title' => 'Moda',
-          'content' => 'Isso é um post sobre moda',
-        ]);
-        dd($user->posts);
+
+        // $user->teams()->attach(1);
+        $user->teams()->sync([2,3]);
+        $user->load('teams');
+
+        return $user->teams;
+
         return view('user',[
             'name' => 'Moranguinho',
             'user' => $user,

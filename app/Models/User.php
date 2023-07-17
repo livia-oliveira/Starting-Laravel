@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 use App\Models\Post;
+use App\models\Team;
 
 class User extends Authenticatable
 {
@@ -47,5 +48,8 @@ class User extends Authenticatable
 
     public function posts(){
         return $this->hasMany(Post::class);
+    }
+    public function teams(){
+        return $this->belongsToMany(Team::class);
     }
 }
